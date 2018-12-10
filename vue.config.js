@@ -7,7 +7,9 @@ module.exports = {
   // sub-path here. For example, if your app is deployed at
   // https://www.foobar.com/my-app/
   // then change this to '/my-app/'
-  baseUrl: '/agile/',
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? '/agile/'
+    : '/',
 
   // where to output built files
   outputDir: 'dist',
